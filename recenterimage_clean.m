@@ -8,7 +8,7 @@ close
 
 s=size(oriclean);
 imcenter=fliplr(round(s(1:2)/2));
-trans=round(imcenter-center);
+trans=2*round(imcenter-center);
 normclean(isnan(normclean))=2;
 oriclean(isnan(oriclean))=2;
 normcent=imtranslate(normclean,trans,'FillValues',2,'OutputView','full');
