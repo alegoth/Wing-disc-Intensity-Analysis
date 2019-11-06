@@ -1,6 +1,6 @@
 %% Name of the file and parameters
 path = dir('*.tif');  %Find the .tif in the current folder
-namefile = 'Clones_UAStToll8YFP_TRITON0.2_MouthHookSpacers_12mHS_GFP488_RFP568_Ecad647_151118.lif - 3-63x-1.5x-2048x2048-600Hz-3LA-0.7u.tif';
+namefile = 'whatever.tif';
 %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Enter the parameters here                                              %
@@ -22,7 +22,7 @@ stack=3;  %Number of slices that are kept abve the detected (and shifted) surfac
 %     [normclean,oriclean]=keepmembrane_clean(ori,ctonormalize,ctoassess);
 [normclean,oriclean]=keepsurface_clean(ori,ctonormalize,ctoassess,shift,stack);
 %% recenter the image
-maxproj=cat(3,max(normclean,[],3),max(squeeze(ori(:,:,1,:)),[],3),max(oriclean,[],3));
+maxproj=cat(3,max(normclean,[],3),max(normclean,[],3),max(oriclean,[],3));
 [normcent,oricent,trans]=recenterimage_clean(maxproj,normclean,oriclean);
 %% Coarse grain
 sizequare=5; %size given in micrometer
