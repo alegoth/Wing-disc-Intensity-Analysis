@@ -7,9 +7,9 @@
 %of each slice and keep the slice of the highest intensity. A median filter
 %is finally applied.
 
-function [normclean,oriclean,maskpost]=keepsurface_clean(ori,ctonormalize,ctoassess,shift,stack)
+function [normclean,oriclean]=keepsurface_clean(ori,ctonormalize,ctoassess,shift,stack)
 
-cecad=squeeze(ori(:,:,channel,:));
+cecad=squeeze(ori(:,:,ctonormalize,:));
 s=size(cecad);
 stepy=round(s(1)/128); %You can change the size of the square here (y dimension)
 stepx=round(s(2)/128); %and here (x dimension)
